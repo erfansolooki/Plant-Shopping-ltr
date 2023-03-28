@@ -1,0 +1,136 @@
+:root {
+    --mainBlack: #545454;
+    --mainWhite: #ffffff;
+    --mainBackground: linear-gradient(270deg, #308E63 79.76%, rgba(48, 142, 99, 0.55) 151.98%);
+    --CTAButtonColor: rgba(2, 83, 39, 0.5);
+    --disableButtonColor: #DCDCDC;
+}
+
+.productCart {
+    background: #F6F6F6;
+    width: 300px;
+    height: 450px;
+    border-radius: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: all .3s ease;
+}
+
+.productCart:hover {
+    transform: scale(1.05);
+}
+
+.addToCart {
+    bottom: 0;
+    left: 0;
+    width: 106px;
+    height: 50px;
+    border: none;
+    background: #308E63;
+    border-radius: 0 16px;
+    transition: all .3s ease-in-out;
+}
+
+.addToCart a {
+    color: var(--mainWhite);
+    font-size: 14px;
+}
+
+.addToCart:hover {
+    background: #128550;
+}
+
+.addLine {
+    font-size: 32px;
+    color: var(--mainWhite);
+}
+
+.productCart .productImage {
+    height: 338px;
+    width: 180px;
+}
+
+.productDescription {
+    color: var(--mainBlack);
+}
+
+.cartFooter {
+    width: 300px;
+}
+
+.pagination-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.favoriteProduct {
+    color: #e93535db;
+}
+
+.productCart .productDescription svg {
+    cursor: pointer;
+}
+
+.title {
+    font-size: 28px;
+    color: var(--mainBlack);
+    margin: 16px 16px 0;
+    text-align: right;
+}
+
+.checkInCart span {
+    font-size: 12px;
+}
+
+.checkInCart a {
+    color: var(--mainWhite);
+}
+
+/* Popover styling */
+.popover__message {
+    font-size: 12px;
+}
+
+.popover__wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 320px;
+    transform: translate(0, 10px);
+    padding: .25rem;
+    background-color: #308E63;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    top: -8px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #308E63 transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.popover__message {
+    text-align: center;
+}

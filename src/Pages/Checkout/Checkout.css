@@ -1,0 +1,55 @@
+.checkout {
+    background: #fff;
+}
+
+.checkoutContainer {
+    border-radius: 8px;
+    width: 290px;
+    /* border: solid 1px #dee2e6; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.paymentButton button {
+    width: 132px;
+    height: 55px;
+    border: solid 1px #dee2e6;
+    background: #fff;
+    border-radius: 8px;
+    color: #dee2e6;
+    transition: all .3s ease-in-out;
+}
+
+.paymentButton button:nth-child(1) {
+    margin: 0 0 8px 8px;
+}
+
+.paymentButton button:nth-child(4) {
+    margin: 0 8px 0 0;
+}
+
+.paymentButton .active {
+    background: #308E63;
+    color: #fff;
+}
+
+.checkout .finalAcceptButton {
+    background: #308E63;
+    border: none;
+    width: 95%;
+    color: #fff;
+    border-radius: 4px;
+    transition: all .3s ease-in-out;
+}
+
+.checkout .finalAcceptButton:hover {
+    transform: scale(1.02);
+}
+
+.disableAcceptButton {
+    background: #e7e7e7;
+    border: none;
+    width: 95%;
+    color: #fff;
+    border-radius: 4px;
+    transition: all .3s ease-in-out;
+}

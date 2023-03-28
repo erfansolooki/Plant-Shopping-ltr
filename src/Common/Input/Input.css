@@ -1,0 +1,55 @@
+input:focus {
+    border: 1px solid #308E63;
+    outline: none;
+}
+
+label {
+    display: flex;
+    font-weight: 400;
+}
+
+input {
+    padding: 6px 12px;
+    display: block;
+    background: #fff;
+    color: #444;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 12px 0;
+}
+
+.form-control {
+    border: none;
+}
+
+.error {
+    color: red;
+    margin-top: 6px;
+}
+
+.form-control.radio {
+    display: flex;
+}
+
+.form-control .radio-button {
+    display: flex;
+    align-items: center;
+}
+
+.form-control .radio-button input {
+    width: 16px;
+    margin: 0 8px;
+}
+
+[type=email],
+[type=number],
+[type=tel],
+[type=url] {
+    direction: rtl;
+}
+
+input::placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(69, 69, 69, .85);
+}

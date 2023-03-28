@@ -1,0 +1,63 @@
+.formContainer .title {
+    font-size: 20px;
+}
+
+.formContainer .submitButton {
+    background: #e7e7e7;
+    border-radius: 4px;
+    transition: all .3s ease-in-out;
+}
+
+.formContainer .submitButton:hover {
+    transform: scale(1.04);
+}
+
+.signUp {
+    font-size: 14px;
+}
+
+.signUp p {
+    color: rgba(69, 69, 69, .85);
+}
+
+.signUp a {
+    color: #545454;
+}
+
+.loginForm .swiper {
+    width: 400px;
+    height: 600px;
+    border-radius: 8px;
+}
+
+.loginForm img {
+    height: 480px;
+    width: 240px;
+}
+
+.slider-title {
+    font-size: 28px;
+}
+
+.slider-description {
+    font-size: 14px;
+    max-width: 15rem;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+.formContainer button:not(:disabled) {
+    cursor: pointer;
+    background: #308E63;
+}
+
+.loginForm .row {
+    height: 30rem;
+}
+
+@media only screen and (min-width: 992px) {
+    .formContainer {
+        margin: 0 80px;
+    }
+}

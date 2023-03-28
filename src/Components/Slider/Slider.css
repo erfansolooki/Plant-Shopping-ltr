@@ -1,0 +1,125 @@
+:root {
+    --mainBlack: #545454;
+    --mainWhite: #ffffff;
+    --mainBackground: linear-gradient(270deg, #308E63 79.76%, rgba(48, 142, 99, 0.55) 151.98%);
+    --CTAButtonColor: rgba(2, 83, 39, 0.5);
+    --disableButtonColor: #DCDCDC;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #308E63;
+    padding: 2rem 0;
+}
+
+.sliderImage {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.swiper-button-next {
+    background-image: url(../../data/Pictures/Group\ 338.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-next::after {
+    display: none;
+}
+
+.swiper-button-prev {
+    background-image: url(../../data/Pictures/Group\ 339.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    border: 1px solid rgba(2, 83, 39, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    transition: all .3s ease-in-out;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: rgba(2, 83, 39, 0.42);
+    border: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .sliderImage img {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .swiper {
+        height: 500px;
+    }
+
+    .sliderImage img {
+        width: 70% !important;
+    }
+
+    .SliderDetail {
+        padding-right: 24px;
+    }
+}
+
+
+.SliderDetail {
+    width: 55%;
+}
+
+
+.SliderDetail h2 {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--mainWhite);
+}
+
+.SliderDetail .description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    color: #DCDCDC;
+}
+
+.SliderDetail .price {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 55px;
+    color: var(--mainWhite);
+}
+
+.SliderDetail button {
+    width: 96px;
+    height: 36px;
+    border: none;
+    background: var(--CTAButtonColor);
+    color: var(--mainWhite);
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
+    border-radius: 4px;
+}
+
+.CTAButton {
+    transition: all .3s ease-in-out;
+}
+
+.CTAButton:hover {
+    transform: scale(1.03);
+}
+
+.price span {
+    font-size: 16px;
+}
