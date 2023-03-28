@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { RiHeart2Fill, RiAddLine, RiArrowLeftLine } from "react-icons/ri";
+import { RiHeart2Fill, RiAddLine, RiArrowRightLine } from "react-icons/ri";
 import "./Product.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { useState, useMemo } from "react";
@@ -56,7 +56,7 @@ const ProductList = () => {
     <>
       <Container>
         <ToastContainer />
-        <p className="title">گیاهان آپارتمانی</p>
+        <p className="title text-end">Apartment Plants</p>
         <Row className="justify-content-center">
           {currentTableData.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>
@@ -67,7 +67,7 @@ const ProductList = () => {
                       <div className="popover__wrapper">
                         <div className="popover__content">
                           <p className="popover__message mb-0 p-1">
-                            برای جزییات بیشتر کلیک کنید
+                            Click for more detail
                           </p>
                         </div>
                         <div className="popover__title">
@@ -80,8 +80,8 @@ const ProductList = () => {
                       </div>
                     </Link>
                   </section>
-                  <section dir="rtl" className="cartFooter position-absolute">
-                    <section className="ps-2 productDescription">
+                  <section dir="ltr" className="cartFooter position-absolute">
+                    <section className="pe-2 productDescription">
                       <RiHeart2Fill
                         onClick={() => addFavoriteProductsHandler(product)}
                         className={
@@ -92,10 +92,10 @@ const ProductList = () => {
                       />
                       <p className="mt-2">{product.name}</p>
                       <p className="mt-2">
+                        <span className="fw-bold">$</span>
                         <span className="mt-2 mb-0 fw-bold">
                           {product.price}
                         </span>
-                        <span className="ms-1 fw-bold">تومان</span>
                       </p>
                     </section>
                     <button
@@ -109,8 +109,8 @@ const ProductList = () => {
                       {checkInCart(cart, product) ? (
                         <div className="checkInCart">
                           <Link to="/cart">
-                            <span className="me-1">ادامه خرید</span>
-                            <RiArrowLeftLine />
+                            <span className="ms-1">purchase</span>
+                            <RiArrowRightLine />
                           </Link>
                         </div>
                       ) : (

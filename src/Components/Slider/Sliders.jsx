@@ -2,7 +2,7 @@ import { useProducts } from "../../Context/ProductsProvider";
 import { useCartDispatcher } from "../../Context/CartProvider";
 import { Link } from "react-router-dom";
 import "./Slider.css";
-import { RiArrowLeftLine } from "react-icons/ri";
+import { RiArrowRightLine } from "react-icons/ri";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -52,15 +52,15 @@ const Slider = () => {
                 quam saepe earum!
               </p>
               <p className="price text-end">
+                <span>$</span>
                 {product.price}
-                <span className="ms-2">$</span>
               </p>
-              <Link to={`/productsDetail/${product.id}`}>
+              <Link to={`/productsDetail/${product.id}`} className="slider-btn">
                 <button className="CTAButton d-flex flex-row justify-content-center align-items-center">
-                  <p className="m-0">Buy</p>
-                  <span className="ms-2">
-                    <RiArrowLeftLine />
+                  <span className="me-2">
+                    <RiArrowRightLine />
                   </span>
+                  <p className="m-0">Buy</p>
                 </button>
               </Link>
             </section>

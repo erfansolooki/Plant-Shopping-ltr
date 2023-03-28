@@ -120,6 +120,12 @@
     transform: scale(1.03);
 }
 
-.price span {
-    font-size: 16px;
+.price span:first-child {
+    margin-inline-start: .15rem;
+}
+
+.slider-btn {
+    text-align: left;
+    text-align: -moz-left;
+    text-align: -webkit-left;
 }

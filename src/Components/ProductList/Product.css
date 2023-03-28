@@ -21,12 +21,12 @@
 
 .addToCart {
     bottom: 0;
-    left: 0;
+    right: .25rem;
     width: 106px;
     height: 50px;
     border: none;
     background: #308E63;
-    border-radius: 0 16px;
+    border-radius: 16px 0;
     transition: all .3s ease-in-out;
 }
 

@@ -62,24 +62,24 @@ const Navigation = () => {
               </section>
             ) : (
               <section className="d-flex flex-column flex-md-row">
-                <LinkContainer to="/login">
-                  <Nav.Link className="authentication-button mt-3 mt-md-0">
-                    <button className="loginButton">Sign in</button>
-                  </Nav.Link>
-                </LinkContainer>
                 <LinkContainer to="/signUp">
                   <Nav.Link className="authentication-button ">
                     <button className="signUp">Sign up</button>
                   </Nav.Link>
                 </LinkContainer>
+                <LinkContainer to="/login">
+                  <Nav.Link className="authentication-button mt-3 mt-md-0">
+                    <button className="loginButton">Sign in</button>
+                  </Nav.Link>
+                </LinkContainer>
               </section>
             )}
             <section className="d-flex flex-column flex-md-row menuItem ms-md-5">
-              <LinkContainer to="/">
-                <Nav.Link>Home</Nav.Link>
-              </LinkContainer>
               <LinkContainer to="/category">
                 <Nav.Link>Products</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/">
+                <Nav.Link>Home</Nav.Link>
               </LinkContainer>
             </section>
           </Nav>
