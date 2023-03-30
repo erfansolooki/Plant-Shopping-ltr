@@ -32,7 +32,7 @@ const ProductList = () => {
   }, [currentPage]);
 
   const addProductHandler = (product) => {
-    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+    toast.success(`${product.name} added to your cart`, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,

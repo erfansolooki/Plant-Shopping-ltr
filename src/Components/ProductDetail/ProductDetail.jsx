@@ -6,7 +6,7 @@ import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { checkInCart } from "../../Utils/checkInCart";
 import { Link } from "react-router-dom";
 import {
-  RiArrowLeftLine,
+  RiArrowRightLine,
   RiDropLine,
   RiSunLine,
   RiHeart2Line,
@@ -55,38 +55,39 @@ const ProductDetail = () => {
             {selectedProduct.map((item) => (
               <section dir="rtl" className="d-md-flex align-items-center">
                 <div>
-                  <p className="title m-0 pt-2">{item.name}</p>
-                  <p className="description text-start mt-2">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-                    با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه
-                    و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی
-                    تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای
-                    کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
-                    آینده، شناخت فراوان جامعه و متخصصان را می طلبد.
+                  <p className="title m-0 pt-2 text-end">{item.name}</p>
+                  <p className="description text-end mt-2">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Exercitationem magnam, dolorem tempore neque recusandae
+                    minima corrupti nostrum et velit, pariatur obcaecati
+                    possimus cum in atque molestias odit beatae suscipit.
+                    Magnam.
                   </p>
-                  <p className="mt-2 price">
+                  <p className="mt-2 text-end price">
+                    <span className="fw-bold">$</span>
                     <span className="mt-2 mb-0 fw-bold">{item.price}</span>
-                    <span className="ms-1 fw-bold">تومان</span>
                   </p>
-                  <button
-                    className="addToCart"
-                    onClick={
-                      checkInCart(cart, item)
-                        ? ""
-                        : () => addProductHandler(item)
-                    }
-                  >
-                    {checkInCart(cart, item) ? (
-                      <div className="checkInCart">
-                        <Link to="/cart">
-                          <span className="me-1">ادامه خرید</span>
-                          <RiArrowLeftLine className="text-white" />
-                        </Link>
-                      </div>
-                    ) : (
-                      <p className="text-white mb-0">افزودن به سبد خرید</p>
-                    )}
-                  </button>
+                  <div className="btn-container w-100 d-flex justify-content-end">
+                    <button
+                      className="addToCart"
+                      onClick={
+                        checkInCart(cart, item)
+                          ? ""
+                          : () => addProductHandler(item)
+                      }
+                    >
+                      {checkInCart(cart, item) ? (
+                        <div className="checkInCart">
+                          <Link to="/cart">
+                            <RiArrowRightLine className="text-white" />
+                            <span className="ms-1">purchase</span>
+                          </Link>
+                        </div>
+                      ) : (
+                        <p className="text-white mb-0">Add To Cart</p>
+                      )}
+                    </button>
+                  </div>
                 </div>
                 <div className="text-center mt-2">
                   <img src={item.image} alt="" />
@@ -102,19 +103,19 @@ const ProductDetail = () => {
               <p className="title m-0 pt-2 ps-2">توضیحات و نگهداری</p>
               <Row className="mt-3">
                 <ProductDetailDescription
-                  descriptionTitle={"آبیاری"}
+                  descriptionTitle={"WATERING"}
                   icon={<RiDropLine className="ms-2" />}
                 />
                 <ProductDetailDescription
-                  descriptionTitle={"نور"}
+                  descriptionTitle={"LIGHTS"}
                   icon={<RiSunLine className="ms-2" />}
                 />
                 <ProductDetailDescription
-                  descriptionTitle={"مزایا"}
+                  descriptionTitle={"BENEFITS"}
                   icon={<RiHeart2Line className="ms-2" />}
                 />
                 <ProductDetailDescription
-                  descriptionTitle={"حیوان دوست"}
+                  descriptionTitle={" CAT FRIENDLINESS"}
                   icon={<RiGitlabLine className="ms-2" />}
                 />
               </Row>

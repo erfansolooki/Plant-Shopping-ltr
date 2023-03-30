@@ -1,0 +1,122 @@
+.specialSaleProductList {
+  background: rgba(178, 180, 181, 0.1);
+}
+
+.specialSaleProductList button {
+  color: #fff;
+  font-size: 14px;
+  background-color: #545454;
+}
+
+.specialSaleProductList button:hover {
+  background: #484141;
+}
+
+._product-cart {
+  background: #308e63;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  height: 500px;
+  width: 350px;
+  border-radius: 1rem;
+}
+
+._productImage {
+  width: 150px;
+  height: 300px;
+}
+
+._discountPercent {
+  width: 44px;
+  height: 58px;
+  background: rgba(2, 83, 39, 0.5);
+}
+
+.mainPrice del span {
+  color: rgba(178, 180, 181, 0.8);
+  font-size: 14px;
+}
+
+.mainPrice del {
+  color: #fff;
+}
+
+._cart-footer {
+  width: 100%;
+}
+
+._addTo-cart {
+  bottom: 0;
+  right: 0.25rem;
+  width: 106px;
+  height: 50px;
+  border: none;
+  background: #545454;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem 0;
+  bottom: 0;
+  right: 0;
+}
+
+.specialSaleProductList .popover__content {
+  background-color: #545454;
+}
+
+.specialSaleProductList .popover__content:before {
+  border-color: transparent transparent #545454;
+}
+
+._popover {
+  &-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  &-content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 320px;
+    left: 0.5rem;
+    transform: translate(0, 10px);
+    padding: 0.25rem;
+    background-color: #545454;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    &:before {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      right: calc(50% - 10px);
+      top: -8px;
+      border-style: solid;
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent #545454 transparent;
+      transition-duration: 0.3s;
+      transition-property: transform;
+    }
+    &:hover {
+      z-index: 10;
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0, -20px);
+      transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+    }
+  }
+  &-message {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+._popover-wrapper:hover ._popover-content {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -20px);
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}

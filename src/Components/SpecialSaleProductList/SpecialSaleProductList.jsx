@@ -1,10 +1,8 @@
 import Container from "react-bootstrap/esm/Container";
-import "./SpecialSaleProductList.css";
 import { specialSale } from "../../data/data";
 import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
-import { RiHeart2Fill, RiAddLine, RiArrowLeftLine } from "react-icons/ri";
-import { useState } from "react";
+import { RiHeart2Fill, RiAddLine, RiArrowRightLine } from "react-icons/ri";
 import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { checkInCart } from "../../Utils/checkInCart";
 import { toast, ToastContainer } from "react-toastify";
@@ -14,6 +12,8 @@ import {
   useFavoriteDispatcher,
 } from "../../Context/FavoriteProducts";
 import { checkInFavoriteProducts } from "../../Utils/checkInFavoriteProducts";
+// Styles
+import styles from "./SpecialSaleProductList.module.scss";
 
 const SpecialSaleProductList = () => {
   const { cart } = useCart();
@@ -23,7 +23,7 @@ const SpecialSaleProductList = () => {
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
-    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+    toast.success(`${product.name} Added to your cart`, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -49,34 +49,55 @@ const SpecialSaleProductList = () => {
         <Row className="justify-content-center">
           {specialSale.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>
-              <div className="w-100 d-flex justify-content-center">
-                <section className="productCart mb-4">
+              <div
+                className={`w-100 d-flex justify-content-center ${
+                  styles[`_container`]
+                }`}
+              >
+                <section
+                  className={`mb-4 position-relative ${
+                    styles[`_product-cart`]
+                  }`}
+                >
                   <section className="d-flex justify-content-center mb-1">
-                    <div className="discountPercent text-center text-white">
+                    <div
+                      className={` text-center text-white ${
+                        styles[`_discountPercent`]
+                      }`}
+                    >
                       <p className="m-0 mt-1">{product.discount}%</p>
                       <p className="m-0">OFF</p>
                     </div>
                   </section>
                   <section className="text-center">
                     <Link to={`/specialSaleProductsDetail/${product.id}`}>
-                      <div className="popover__wrapper">
-                        <div className="popover__content">
-                          <p className="popover__message mb-0 p-1">
-                            برای جزییات بیشتر کلیک کنید
+                      <div className={styles[`_popover-wrapper`]}>
+                        <div className={styles[`_popover-content`]}>
+                          <p
+                            className={`mb-0 p-1 ${
+                              styles[`_popover-message `]
+                            }`}
+                          >
+                            click for more detail
                           </p>
                         </div>
                         <div className="popover__title">
                           <img
                             src={product.image}
                             alt=""
-                            className="productImage"
+                            className={styles[`_productImage`]}
                           />
                         </div>
                       </div>
                     </Link>
                   </section>
-                  <section dir="rtl" className="cartFooter position-absolute">
-                    <section className="ps-2 productDescription text-white">
+                  <section
+                    dir="rtl"
+                    className={`d-flex justify-content-end ${
+                      styles[`_cart-footer`]
+                    }`}
+                  >
+                    <section className="pe-2 d-flex flex-column align-items-end productDescription text-white">
                       <RiHeart2Fill
                         onClick={() => addFavoriteProductsHandler(product)}
                         className={
@@ -94,12 +115,14 @@ const SpecialSaleProductList = () => {
                       </p>
                       <p className="mb-2">
                         <span className="mb-0 fw-bold">{product.offPrice}</span>
-                        <span className="ms-2">تومان</span>
+                        <span className="ms-2">$</span>
                       </p>
                     </section>
 
                     <button
-                      className="addToCart position-absolute"
+                      className={`position-absolute d-flex justify-content-center align-items-center ${
+                        styles[`_addTo-cart`]
+                      }`}
                       onClick={
                         checkInCart(cart, product)
                           ? null
@@ -109,9 +132,8 @@ const SpecialSaleProductList = () => {
                       {checkInCart(cart, product) ? (
                         <div className="checkInCart">
                           <Link to="/cart">
-                            {" "}
-                            <span className="me-1">ادامه خرید</span>
-                            <RiArrowLeftLine />
+                            <RiArrowRightLine />
+                            <span className="ms-1">purchase</span>
                           </Link>
                         </div>
                       ) : (
