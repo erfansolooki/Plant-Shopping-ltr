@@ -50,7 +50,7 @@ const CartPage = () => {
                           <del>
                             <span className="m-0 fw-bold">{product.price}</span>
                           </del>
-                          <span dir="ltr" className="ms-2 discount">
+                          <span dir="ltr" className="me-2 discount">
                             {product.discount}%
                           </span>
                         </p>
