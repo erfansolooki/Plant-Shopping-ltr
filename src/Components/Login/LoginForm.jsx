@@ -15,9 +15,9 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   email: Yup.string()
-    .email("نوع ایمیل وارد شده اشتباه است")
-    .required("ایمیل وارد کنید"),
-  password: Yup.string().required("رمز عبور وارد کنید"),
+    .email("The email you entered is not in the correct format. Please check.")
+    .required("Enter your email"),
+  password: Yup.string().required("Enter your password"),
 });
 
 const LoginForm = () => {
@@ -47,41 +47,41 @@ const LoginForm = () => {
 
   return (
     <Container className="loginForm">
-      <Row dir="rtl" className=" justify-content-center align-items-center">
+      <Row dir="ltr" className=" justify-content-center align-items-center">
         <Col xs={10} md={8} xl={7} xxl={6}>
           <div className="formContainer flex-column justify-content-center align-items-center">
             <div className="text-start">
-              <p className="my-3 mx-0 title fw-bold">ورود</p>
+              <p className="my-3 mx-0 title fw-bold text-end">Sign in</p>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <Input
                 formik={formik}
                 name="email"
-                label="ایمیل"
+                label="Email"
                 type="email"
-                placeholder={"ایمیل خود را وارد کنید"}
+                placeholder={"Enter your email..."}
               />
               <Input
                 formik={formik}
                 name="password"
-                label="رمز عبور"
+                label="Password"
                 type="password"
-                placeholder={"رمز عبور خود را وارد کنید"}
+                placeholder={"Enter your password..."}
               />
               <button
                 type="submit"
                 disabled={!formik.isValid}
                 className="submitButton w-100 my-3 border-0 text-white py-2 px-3"
               >
-                ورود
+                Sign in
               </button>
               {error && <p style={{ color: "red" }}>{error}</p>}
             </form>
           </div>
           <div className="d-flex justify-content-center signUp">
-            <p className="me-2">هنوز حساب کاربری ندارید؟</p>
+            <p className="ms-2">Don't have an account?</p>
             <Link to={`/SignUp`} className="fw-bold">
-              ثبت نام
+              Sign in
             </Link>
           </div>
         </Col>

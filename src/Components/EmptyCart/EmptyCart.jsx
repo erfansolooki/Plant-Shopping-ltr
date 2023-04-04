@@ -14,11 +14,10 @@ const EmptyCart = () => {
           />
         </div>
         <p className="emptyCartTitle text-center mb-2">
-          هیچ محصولی در سبد خرید شما وجود ندارد
+          There are no products in your cart
         </p>
         <p className="text-center emptyCartDescription px-3">
-          هر زمان که محصولی را به سبد خرید خود اضاف کردید در این صفحه به شما
-          نمایش داده خواهد شد
+          Whenever you add a product to your cart on this page will be displayed
         </p>
       </Container>
     </main>

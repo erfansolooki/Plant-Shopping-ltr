@@ -18,18 +18,21 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   name: Yup.string()
-    .max(8, "نام کاربری باید کمتر از 8 کاراکتر باشد")
-    .required("نام کاربری را وارد کنید"),
+    .max(8, "username should be less than 8 character")
+    .required("Enter your username"),
   email: Yup.string()
-    .email("ایمیل وارد شده اشتباه است")
-    .required("ایمیل را وارد کنید"),
+    .email("The email you entered is not in the correct format. Please check.")
+    .required("Enter your email"),
   phoneNumber: Yup.string()
-    .required("شماره موبایل را وارد کنید")
-    .matches(/^[0-9]{11}$/, "شماره موبایل اشتباه است"),
-  password: Yup.string().required("رمز عبور را وارد کنید"),
+    .required("Enter your phone number")
+    .matches(
+      /^[0-9]{11}$/,
+      "The phone number you entered is not in the correct format. Please check."
+    ),
+  password: Yup.string().required("Enter your password"),
   passwordConfirmation: Yup.string()
-    .oneOf([Yup.ref("password"), null], "رمز عبور همخوانی ندارد")
-    .required("تکرار رمز عبور را وارد کنید"),
+    .oneOf([Yup.ref("password"), null], "Password does not match")
+    .required("Enter your confirm password"),
 });
 
 const SignUpForm = () => {
@@ -69,46 +72,46 @@ const SignUpForm = () => {
 
   return (
     <Container>
-      <Row dir="rtl" className=" justify-content-center align-items-center">
+      <Row dir="ltr" className=" justify-content-center align-items-center">
         <Col xs={10} md={8} xl={7} xxl={6}>
           <div className="formContainer flex-column justify-content-center align-items-center">
             <div className="text-start">
-              <p className="my-3 mx-0 title fw-bold">ثبت نام</p>
+              <p className="my-3 mx-0 title fw-bold">Sign up</p>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <Input
                 formik={formik}
                 name="name"
-                label="نام کاربری"
-                placeholder={"نام کاربری خود را وارد کنید"}
+                label="Username"
+                placeholder={"Enter your username..."}
               />
               <Input
                 formik={formik}
                 name="email"
-                label="ایمیل"
+                label="Email"
                 type="email"
-                placeholder={"ایمیل خود را وارد کنید"}
+                placeholder={"Enter your email..."}
               />
               <Input
                 formik={formik}
                 name="phoneNumber"
-                label="شماره موبایل"
+                label="Phone number"
                 type="tel"
-                placeholder={"شماره موبایل خود را وارد کنید"}
+                placeholder={"Enter your phone number..."}
               />
               <Input
                 formik={formik}
                 name="password"
-                label="عبور"
+                label="Password"
                 type="password"
-                placeholder={"رمز عبور خود را وارد کنید"}
+                placeholder={"Enter your password..."}
               />
               <Input
                 formik={formik}
                 name="passwordConfirmation"
-                label="تکرار رمز عبور"
+                label="Confirm password"
                 type="password"
-                placeholder={"رمز عبور خود را دوباره وارد کنید"}
+                placeholder={"Enter your confirm password..."}
               />
               <button
                 style={{ width: "100%" }}
@@ -116,15 +119,15 @@ const SignUpForm = () => {
                 disabled={!formik.isValid}
                 className="submitButton w-100 my-3 border-0 text-white py-2 px-3"
               >
-                ثبت نام
+                Sign up
               </button>
               {error && <p style={{ color: "red" }}>{error}</p>}
             </form>
           </div>
           <div className="d-flex justify-content-center signUp">
-            <p className="me-2">از قبل حساب کاربری دارید ؟</p>
+            <p className="ms-2">Already have an account?</p>
             <Link to="/Login" className="fw-bold">
-              ورود
+              Sign in
             </Link>
           </div>
         </Col>

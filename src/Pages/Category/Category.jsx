@@ -1,5 +1,5 @@
 import { useProducts } from "../../Context/ProductsProvider";
-import { RiHeart2Fill, RiAddLine, RiArrowLeftLine } from "react-icons/ri";
+import { RiHeart2Fill, RiAddLine, RiArrowRightLine } from "react-icons/ri";
 import { Row, Col, Container } from "react-bootstrap";
 
 import { useCart, useCartDispatcher } from "../../Context/CartProvider";
@@ -23,7 +23,7 @@ const ProductsPage = () => {
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
-    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+    toast.success(`${product.name} added to your cart`, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -46,7 +46,7 @@ const ProductsPage = () => {
       <Container className="pb-3">
         <ToastContainer />
         <Filter />
-        <p className="title ms-0">گیاهان آپارتمانی</p>
+        <p className="title ms-0 text-end">Plant Apartment</p>
         <Row className="">
           {products.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>
@@ -57,7 +57,7 @@ const ProductsPage = () => {
                       <div className="popover__wrapper">
                         <div className="popover__content">
                           <p className="popover__message mb-0 p-1">
-                            برای جزییات بیشتر کلیک کنید
+                            click for more detail
                           </p>
                         </div>
                         <div className="popover__title">
@@ -70,8 +70,30 @@ const ProductsPage = () => {
                       </div>
                     </Link>
                   </section>
-                  <section dir="rtl" className="cartFooter position-absolute">
-                    <section className="ps-2 productDescription">
+                  <section
+                    dir="rtl"
+                    className="cartFooter d-flex align-items-end justify-content-between"
+                  >
+                    <button
+                      className="addToCart"
+                      onClick={
+                        checkInCart(cart, product)
+                          ? null
+                          : () => addProductHandler(product)
+                      }
+                    >
+                      {checkInCart(cart, product) ? (
+                        <div className="checkInCart">
+                          <Link to="/cart">
+                            <RiArrowRightLine />
+                            <span className="ms-1">purchase</span>
+                          </Link>
+                        </div>
+                      ) : (
+                        <RiAddLine className="addLine" />
+                      )}
+                    </button>
+                    <section className="ps-2 productDescription text-end pe-2">
                       <RiHeart2Fill
                         onClick={() => addFavoriteProductsHandler(product)}
                         className={
@@ -82,31 +104,12 @@ const ProductsPage = () => {
                       />
                       <p className="mt-2">{product.name}</p>
                       <p className="mt-2">
+                        <span className="ms-1 fw-bold">$</span>
                         <span className="mt-2 mb-0 fw-bold">
                           {product.price}
                         </span>
-                        <span className="ms-1 fw-bold">تومان</span>
                       </p>
                     </section>
-                    <button
-                      className="addToCart position-absolute"
-                      onClick={
-                        checkInCart(cart, product)
-                          ? null
-                          : () => addProductHandler(product)
-                      }
-                    >
-                      {checkInCart(cart, product) ? (
-                        <div className="checkInCart">
-                          <Link to="/cart">
-                            <span className="me-1">ادامه خرید</span>
-                            <RiArrowLeftLine />
-                          </Link>
-                        </div>
-                      ) : (
-                        <RiAddLine className="addLine" />
-                      )}
-                    </button>
                   </section>
                 </section>
               </div>

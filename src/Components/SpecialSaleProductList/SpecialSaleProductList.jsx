@@ -45,7 +45,7 @@ const SpecialSaleProductList = () => {
     <main className="specialSaleProductList">
       <ToastContainer />
       <Container>
-        <p className="title pt-4">فروش ویژه</p>
+        <p className="title pt-4 text-end">Special Sale</p>
         <Row className="justify-content-center">
           {specialSale.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>

@@ -43,30 +43,21 @@ const CheckoutPage = () => {
         <section className="bg-white checkoutContainer" dir="rtl">
           <section className="cartSummary p-2">
             <div className="summaryItem d-flex justify-content-between fw-bold">
-              <p>مجموع خرید :</p>
-              <p>
-                {originalTotalPrice}
-                <span className="ms-1">تومان</span>
-              </p>
+              <p> Subtotal :</p>
+              <p>${originalTotalPrice}</p>
             </div>
             <div className="totalDiscount d-flex justify-content-between fw-bold">
-              <p>مجموع تخفیف :</p>
-              <p>
-                {originalTotalPrice - total}
-                <span className="ms-1">تومان</span>
-              </p>
+              <p> Discount :</p>
+              <p>${originalTotalPrice - total}</p>
             </div>
             <div className="netPrice d-flex justify-content-between fw-bold mt-2 border-bottom">
-              <p>قابل پرداخت : </p>
-              <p>
-                {total}
-                <span className="ms-1">تومان</span>
-              </p>
+              <p>Grand total : </p>
+              <p>${total}</p>
             </div>
           </section>
           <section className="ms-2">
             <section className="payments mt-2 pb-2">
-              <p className="addressTitle fw-bold mb-1">نوع ارسال </p>
+              <p className="addressTitle fw-bold mb-1">Shipping Company </p>
               <section className="paymentButton">
                 <button
                   key={1}
@@ -74,7 +65,7 @@ const CheckoutPage = () => {
                   id={"1"}
                   onClick={activePostButton}
                 >
-                  پست پیشتاز
+                  DPD
                 </button>
                 <button
                   key={2}
@@ -82,7 +73,7 @@ const CheckoutPage = () => {
                   id={"2"}
                   onClick={activePostButton}
                 >
-                  تیپاکس
+                  RoyalMail
                 </button>
 
                 <button
@@ -91,7 +82,7 @@ const CheckoutPage = () => {
                   id={"3"}
                   onClick={activePostButton}
                 >
-                  پست فروشگاه
+                  UPS
                 </button>
                 <button
                   key={4}
@@ -99,12 +90,12 @@ const CheckoutPage = () => {
                   id={"4"}
                   onClick={activePostButton}
                 >
-                  پست عادی
+                  FedEx
                 </button>
               </section>
             </section>
             <section className="payments mt-2 pb-2">
-              <p className="addressTitle fw-bold mb-1">نوع پرداخت </p>
+              <p className="addressTitle fw-bold mb-1">Payment </p>
               <section className="paymentButton">
                 <button
                   key={1}
@@ -112,7 +103,7 @@ const CheckoutPage = () => {
                   id={"1"}
                   onClick={handleClick}
                 >
-                  پرداخت در محل
+                  Paypal
                 </button>
                 <button
                   key={2}
@@ -120,7 +111,7 @@ const CheckoutPage = () => {
                   id={"2"}
                   onClick={handleClick}
                 >
-                  پرداخت آنلاین
+                  Crypto
                 </button>
 
                 <button
@@ -129,7 +120,7 @@ const CheckoutPage = () => {
                   id={"3"}
                   onClick={handleClick}
                 >
-                  پرداخت اعتباری
+                  Credit
                 </button>
               </section>
             </section>
@@ -143,7 +134,7 @@ const CheckoutPage = () => {
             }
             onClick={activeButton && post ? toastify : null}
           >
-            ثبت سفارش
+            Place order
           </button>
         </section>
         <ToastContainer />

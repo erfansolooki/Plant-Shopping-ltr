@@ -26,22 +26,22 @@ const CartPage = () => {
 
   return (
     <Container>
-      <p className="title pt-2">سبد خرید</p>
-      <Row dir="rtl">
+      <p className="title pt-2 text-end">Order Summary</p>
+      <Row dir="ltr">
         <Col xs={12} md={8}>
           {cart.map((product) => (
             <section
               className="cart py-2 my-2 d-flex justify-content-between"
               key={product.id}
-              dir="rtl"
+              dir="ltr"
             >
               <div className="d-flex">
                 <img src={product.image} alt="" className="py-2" />
                 <section className="d-flex align-items-center">
-                  <section className="productDetail ms-2 ms-md-3">
+                  <section className="productDetail me-2 me-md-3">
                     <p className="mb-2">{product.name}</p>
                     <p className="mb-2">
-                      سایز
+                      {/* size */}
                       <span className="ms-1">{product.size}</span>
                     </p>
                     <p className="mt-2 price">
@@ -50,7 +50,7 @@ const CartPage = () => {
                           <del>
                             <span className="m-0 fw-bold">{product.price}</span>
                           </del>
-                          <span dir="rtl" className="ms-2 discount">
+                          <span dir="ltr" className="ms-2 discount">
                             {product.discount}%
                           </span>
                         </p>
@@ -58,8 +58,8 @@ const CartPage = () => {
                         ""
                       )}
                       <p className="mb-2 offPrice">
+                        <span className="me-2">$</span>
                         <span className="mb-0 fw-bold">{product.offPrice}</span>
-                        <span className="ms-2">تومان</span>
                       </p>
                     </p>
                   </section>
@@ -72,12 +72,12 @@ const CartPage = () => {
                 />
                 <section className="d-flex align-items-center">
                   <RiSubtractLine
-                    className="subtractIcon me-2"
+                    className="subtractIcon ms-2"
                     onClick={() => decrementHandler(product)}
                   />
                   {product.quantity}
                   <RiAddLine
-                    className="addIcon ms-2"
+                    className="addIcon me-2"
                     onClick={() => incrementHandler(product)}
                   />
                 </section>
@@ -109,28 +109,22 @@ const CartSummary = ({ total, cart }) => {
   return (
     <section className="cartSummary">
       <div className="summaryItem d-flex justify-content-between fw-bold">
-        <p>مجموع خرید :</p>
-        <p>
-          {originalTotalPrice}
-          <span className="ms-1">تومان</span>
-        </p>
+        <p> Subtotal :</p>
+        <p>${originalTotalPrice}</p>
       </div>
       <div className="totalDiscount d-flex justify-content-between fw-bold">
-        <p>مجموع تخفیف :</p>
-        <p>
-          {originalTotalPrice - total}
-          <span className="ms-1">تومان</span>
-        </p>
+        <p> Discount :</p>
+        <p>${originalTotalPrice - total}</p>
       </div>
       <div className="netPrice d-flex justify-content-between fw-bold mt-2">
-        <p>قابل پرداخت : </p>
-        <p>
-          {total}
-          <span className="ms-1">تومان</span>
-        </p>
+        <p> Grand total : </p>
+        <p>${total}</p>
       </div>
       <Link to="/checkout">
-        <button className="btn primary w-100 my-2">ادامه فرآیند خرید</button>
+        <button className="btn primary w-100 my-2">
+          <span className="ms-1">Pay</span>
+          <span>${total}</span>
+        </button>
       </Link>
     </section>
   );

@@ -31,7 +31,7 @@ const ProductDetail = () => {
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
-    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+    toast.success(`${product.name} added to your cart `, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -100,7 +100,7 @@ const ProductDetail = () => {
               className="productDescription bg-white rounded mt-lg-3"
               dir="rtl"
             >
-              <p className="title m-0 pt-2 ps-2">توضیحات و نگهداری</p>
+              <p className="title m-0 pt-2 pe-2 text-end">Treatments & Facts</p>
               <Row className="mt-3">
                 <ProductDetailDescription
                   descriptionTitle={"WATERING"}

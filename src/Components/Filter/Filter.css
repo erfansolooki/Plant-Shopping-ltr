@@ -14,10 +14,10 @@
 .sortButtons p {
     color: #545454;
     font-size: 12px;
-    width: 10rem;
+    width: 3rem;
 }
 
-@media only screen and (min-width: 325px) {
+/* @media only screen and (min-width: 325px) {
     .sortButtons p {
         color: #545454;
         font-size: 12px;
@@ -62,7 +62,7 @@
     .sortButtons p {
         margin-bottom: 0 !important;
     }
-}
+} */
 
 .buttons::-webkit-scrollbar {
     width: 12px;
@@ -101,7 +101,7 @@
     display: flex;
 }
 
-@media only screen and (min-width: 425px) {
+/* @media only screen and (min-width: 425px) {
     .css-b62m3t-container {
         width: 12rem;
     }
@@ -129,4 +129,4 @@
         font-size: 14px;
         color: #545454;
     }
-}
+} */
