@@ -81,7 +81,7 @@ const LoginForm = () => {
           <div className="d-flex justify-content-center signUp">
             <p className="ms-2">Don't have an account?</p>
             <Link to={`/SignUp`} className="fw-bold">
-              Sign in
+              Sign up
             </Link>
           </div>
         </Col>
